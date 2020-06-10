@@ -1,3 +1,4 @@
+using System.Text.Json;
 using BethanysPieShopHRM.Api.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,8 +35,8 @@ namespace BethanysPieShopHRM.Api
                 options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader());
             });
 
-            services.AddControllers();
-                //.AddJsonOptions(options => options.JsonSerializerOptions.ca);
+            services.AddControllers()
+                .AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy=JsonNamingPolicy.CamelCase);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
