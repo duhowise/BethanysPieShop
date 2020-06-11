@@ -17,7 +17,7 @@ namespace BethanysPieShopHRM.Server.Pages
         {
             InitializeCountries();
             InitializeJobCategories();
-            Employee =await EmployeeDataService.GetAllEmployeeDetails (int.Parse(EmployeeId));
+            Employee =await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
             //return base.OnInitializedAsync();
         }
 
